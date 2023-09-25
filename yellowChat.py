@@ -86,13 +86,13 @@ st.markdown("<br><br>", unsafe_allow_html=True)
 history = []
 st.sidebar.markdown("<h2 style='text-align: center; margin-top: 0rem; color: #64CCC5;'>Chat History</h2>", unsafe_allow_html=True)
 
-user_input = st.text_input('Ask Your Question')
+user_input = st.chat_input('Ask Your Question')
 if user_input:
     user_input_lower = user_input.lower()
     
     if user_input_lower in exits:
         bot_reply = random_farewell
-    elif user_input_lower in greetings:
+    elif user_input_lower in ['hi', 'hello', 'how are you']:
         bot_reply = random_greetings
         st.markdown("<br/>", unsafe_allow_html=True)
     else:
